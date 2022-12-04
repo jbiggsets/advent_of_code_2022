@@ -11,10 +11,7 @@ def count_overlapping_cleanup_assignments(
     assignments: List[Tuple[Tuple[int, int], Tuple[int, int]]],
     fully_contained: bool = True,
 ) -> int:
-    """Find the rucksack priority sum
-
-    Args:
-        sacks
+    """Count overlapping cleanup assignments
     """
     ovelapping = 0
     for elf1, elf2 in assignments:

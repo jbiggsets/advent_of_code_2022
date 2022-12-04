@@ -13,9 +13,6 @@ def find_rucksack_priorities(
     sacks: List[str],
 ) -> int:
     """Find the rucksack priority sum
-
-    Args:
-        sacks
     """
     priorities = []
     for sack in sacks:
@@ -35,10 +32,6 @@ def find_badge_priorities(
     size: int = 3,
 ) -> int:
     """Find the badge priority sum
-
-    Args:
-        sacks
-        size
     """
     priorities = []
     for group_i in range(size, len(sacks) + 1, size):

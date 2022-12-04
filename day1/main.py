@@ -12,14 +12,6 @@ def find_sum_of_elves_with_top_n_calories(
     n: int = 1
 ) -> int:
     """Find sum of calories for the to N elves.
-
-    Args:
-        food: A list of food items for each elf where ""
-            indicates a new elf.
-        n: The number of elves to include in the "top" count.
-
-    Returns:
-        The sum of calories for the top N elves.
     """
     # loop through the items and get the set of items for each elf
     elf_i, elves = 0, [[]]

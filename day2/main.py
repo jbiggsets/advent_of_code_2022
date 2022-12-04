@@ -53,10 +53,6 @@ def play_rock_paper_scissor(
     my_shape: str,
 ) -> str:
     """Play rock-paper-scissor
-
-    Args:
-        opponent_shape
-        my_shape
     """
     if opponent_shape == my_shape:
         return "draw"
@@ -69,10 +65,6 @@ def play_rock_paper_scissor_in_reverse(
     my_strategy: str,
 ) -> str:
     """Respond to an opponent shape, given a strategy
-
-    Args:
-        opponent_shape
-        my_strategy
     """
     if my_strategy == "lose":
         return CHALLENGE_MAP_REV[opponent_shape]
@@ -85,10 +77,6 @@ def find_score_from_strategy_guide(
     in_reverse: bool = False,
 ) -> int:
     """Find the score from the given strategy guide
-
-    Args:
-        strategies
-        in_reverse
     """
     results = []
     for (opponent, me) in strategies:
