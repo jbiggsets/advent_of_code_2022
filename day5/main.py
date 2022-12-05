@@ -67,7 +67,6 @@ def relocate_the_crates(
     return "".join([row[0] for row in tcrates])
 
 
-
 if __name__ == "__main__":
 
     parser = ArgumentParser("Advent of Code, Day 5")
