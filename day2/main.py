@@ -48,6 +48,16 @@ STRATEGY_MAP_ACTUAL = {
 }
 
 
+def parse_puzzle_input(filename: str):
+    """Parse the puzzle input
+    """
+    with open(filename) as buffer:
+        return [
+            tuple(line.strip().split(" "))
+            for line in buffer.readlines()
+        ]
+
+
 def play_rock_paper_scissor(
     opponent_shape: str, 
     my_shape: str,
@@ -113,12 +123,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # read in the file
-    with open(args.input_file) as buffer:
-        strategies = [
-            tuple(line.strip().split(" "))
-            for line in buffer.readlines()
-        ]
+    # read in and parse the file
+    strategies = parse_puzzle_input(args.input_file)
 
     # Day 2, part 1
     print(find_score_from_strategy_guide(strategies))

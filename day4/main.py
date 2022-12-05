@@ -7,6 +7,19 @@ from argparse import ArgumentParser
 from typing import List, Tuple
 
 
+def parse_puzzle_input(filename: str):
+    """Parse the puzzle input
+    """
+    with open(filename) as buffer:
+        return [
+            tuple([
+                tuple([int(i) for i in line.strip().split(",")[0].split("-")]),
+                tuple([int(i) for i in line.strip().split(",")[1].split("-")]),
+            ])
+            for line in buffer.readlines()
+        ]
+
+
 def count_overlapping_cleanup_assignments(
     assignments: List[Tuple[Tuple[int, int], Tuple[int, int]]],
     fully_contained: bool = True,
@@ -43,15 +56,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # read in the file
-    with open(args.input_file) as buffer:
-        assign = [
-            tuple([
-                tuple([int(i) for i in line.strip().split(",")[0].split("-")]),
-                tuple([int(i) for i in line.strip().split(",")[1].split("-")]),
-            ])
-            for line in buffer.readlines()
-        ]
+    # read in and parse the file
+    assign = parse_puzzle_input(args.input_file)
 
     # Day 4, part 1
     print(count_overlapping_cleanup_assignments(assign))

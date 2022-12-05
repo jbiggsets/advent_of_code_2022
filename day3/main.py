@@ -9,6 +9,16 @@ from string import ascii_letters
 from typing import List
 
 
+def parse_puzzle_input(filename: str):
+    """Parse the puzzle input
+    """
+    with open(filename) as buffer:
+        return [
+            line.strip()
+            for line in buffer.readlines()
+        ]
+
+
 def find_rucksack_priorities(
     sacks: List[str],
 ) -> int:
@@ -62,12 +72,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # read in the file
-    with open(args.input_file) as buffer:
-        sacks = [
-            line.strip()
-            for line in buffer.readlines()
-        ]
+    # read in and parse the file
+    sacks = parse_puzzle_input(args.input_file)
 
     # Day 3, part 1
     print(find_rucksack_priorities(sacks))

@@ -7,6 +7,13 @@ from argparse import ArgumentParser
 from typing import List 
 
 
+def parse_puzzle_input(filename: str):
+    """Parse the puzzle input
+    """
+    with open(filename) as buffer:
+        return buffer.readlines()
+
+
 def find_sum_of_elves_with_top_n_calories(
     food: List[str], 
     n: int = 1
@@ -38,9 +45,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # read in the file
-    with open(args.input_file) as buffer:
-        elements = buffer.readlines()
+    # read in and parse the file
+    elements = parse_puzzle_input(args.input_file)
 
     # Day 1, part 1
     print(find_sum_of_elves_with_top_n_calories(elements))
